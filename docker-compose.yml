@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  web:
+    image: httpd:2.4
+    container_name: apache-hello
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/usr/local/apache2/htdocs:ro
+    restart: unless-stopped
